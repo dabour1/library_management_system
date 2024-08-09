@@ -61,25 +61,27 @@ create a new record in the users table so that you can use the project and acces
 
   - in post and put you need to send title, author, publicationYear,isbn .
   -thw last one is unique 
-
-          {
-  "title": "test",
-  "author": "test",
+```json
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
   "publicationYear": 1925,
-  "isbn": "3465733479791"
+  "isbn": "9780743273565"
 }
     
 - **patrons endpoints:**
 
   - in post and put you need to send name, phone, email .
-  -thw last one is unique 
+  -the last one is unique
 
-            {
+```json
+{
   "name": "test",
   "phone": "0106456986",
   "email": "test@test.com"
 }
 
+ 
 
 
 
