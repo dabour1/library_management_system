@@ -10,9 +10,13 @@ import com.maids.library_management_system.repository.BookRepository;
 
 import com.maids.library_management_system.repository.PatronRepository;
 
+import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
+
 import com.maids.library_management_system.repository.BorrowingRecordRepository;
 
 import java.time.LocalDate;
+import java.util.Optional;
  
 
 
@@ -22,22 +26,26 @@ public class BorrowingRecordService {
     private BorrowingRecordRepository borrowingRecordRepository;
 
     @Autowired
-    private BookRepository bookRepository;
+    private BookService bookService;
 
     @Autowired
-    private PatronRepository patronRepository;
-
+    private PatronService patronService;
+    @Transactional
     public BorrowingRecord borrowBook(Long bookId, Long patronId) {
-        Book book = bookRepository.findById(bookId).orElseThrow(() -> new ResourceNotFoundException("Book not found"));
-        Patron patron = patronRepository.findById(patronId).orElseThrow(() -> new ResourceNotFoundException("Patron not found"));
-
-        BorrowingRecord record = new BorrowingRecord();
-        record.setBook(book);
-        record.setPatron(patron);
-        record.setBorrowingDate(LocalDate.now());
-        return borrowingRecordRepository.save(record);
+    @Valid Book book = bookService.findById(bookId);
+     @Valid Patron patron = patronService.findById(patronId);
+    Optional< BorrowingRecord> existingRecord = borrowingRecordRepository.findByBookIdAndPatronIdAndReturnDateIsNull(bookId, patronId);
+    if (existingRecord.isPresent()&&existingRecord.get().getReturnDate()==null) {   
+        throw new IllegalArgumentException("Book already borrowed by this patron");
     }
+    BorrowingRecord record = new BorrowingRecord();
+    record.setBook(book);
+    record.setPatron(patron);
+    record.setBorrowingDate(LocalDate.now());
 
+    return borrowingRecordRepository.save(record);
+    }
+    @Transactional
     public BorrowingRecord returnBook(Long bookId, Long patronId) {
         BorrowingRecord record = borrowingRecordRepository.findByBookIdAndPatronIdAndReturnDateIsNull(bookId, patronId)
                 .orElseThrow(() -> new ResourceNotFoundException("Borrowing record not found"));

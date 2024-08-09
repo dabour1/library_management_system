@@ -28,7 +28,7 @@ public class Patron {
     @Email(message = "Email should be valid")
      @Column(unique = true)
 
-    private String email;
+    private String email; 
 
     @NotBlank(message = "phone is required")
     @NotNull(message = "phone cannot be null")
