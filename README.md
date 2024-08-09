@@ -9,15 +9,13 @@ Clone the repository to make a local copy of the application's code repository o
 ### Step 2: Configure Database Settings
 -If you are using MariaDB, the project has been set up so that MariaDB is the primary database. You can also use MySQL or other database ,
 but you will need to install the necessary dependencies and configure the database in the application.properties or application.yml file.
-### Step 3: Configure Database Settings
--If you are using MariaDB, the project has been set up so that MariaDB is the primary database. You can also use MySQL or other database ,
-but you will need to install the necessary dependencies and configure the database in the application.properties or application.yml file.
 
-### Step 4: Create a database named librarydb.
+
+### Step 3: Create a database named librarydb.
 
  
 
-### Step 5: Install Dependencies
+### Step 4: Install Dependencies
 
 1. **Navigate to the library_management_system Folder:**
 
@@ -35,14 +33,14 @@ but you will need to install the necessary dependencies and configure the databa
 
 
 
-### Step 6: Verify Database Connection
+### Step 5: Verify Database Connection
 
  **Ensure Database Connection:**
 
    - Make sure your database server is running and accessible.
 
 
-### Step 7: Run The Project : 
+### Step 6: Run The Project : 
   **Execute link Command:**
    - Run the following command to compile and run the project. :
      ```bash
@@ -51,7 +49,7 @@ but you will need to install the necessary dependencies and configure the databa
 
  
 
- ### Create a new token by registering a user :
+ ### Step 7 : Create a new token by registering a user :
 
 create a new record in the users table so that you can use the project and access the various endpoints. Since I have implemented a basic authentication, it only requires a unique username and password. This will result in the creation of a token that can be used to send requests to the server.
 
