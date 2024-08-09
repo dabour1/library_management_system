@@ -61,31 +61,29 @@ create a new record in the users table so that you can use the project and acces
 
   - in post and put you need to send title, author, publicationYear,isbn .
   -thw last one is unique 
-```json
-{
-  "title": "The Great Gatsby",
-  "author": "F. Scott Fitzgerald",
-  "publicationYear": 1925,
-  "isbn": "9780743273565"
-}
+   ```json
+   {
+     "title": "The Great Gatsby",
+     "author": "F. Scott Fitzgerald",
+     "publicationYear": 1925,
+     "isbn": "9780743273565"
+   } ```
+
+
     
 - **patrons endpoints:**
 
   - in post and put you need to send name, phone, email .
   -the last one is unique
 
-```json
-{
-  "name": "test",
-  "phone": "0106456986",
-  "email": "test@test.com"
-}
+   ```json
+   {
+     "name": "test",
+     "phone": "0106456986",
+     "email": "test@test.com"
+   }...
 
  
-
-
-
-  file locally on your development machine and avoid committing it to the repository.
 
 **Seeking Feedback:**
 
