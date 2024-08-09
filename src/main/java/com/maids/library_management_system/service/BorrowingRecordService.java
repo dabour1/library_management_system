@@ -6,9 +6,7 @@ import com.maids.library_management_system.exception.ResourceNotFoundException;
 import com.maids.library_management_system.model.Book;
 import com.maids.library_management_system.model.BorrowingRecord;
 import com.maids.library_management_system.model.Patron;
-import com.maids.library_management_system.repository.BookRepository;
 
-import com.maids.library_management_system.repository.PatronRepository;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
