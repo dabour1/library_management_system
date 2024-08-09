@@ -67,7 +67,8 @@ create a new record in the users table so that you can use the project and acces
      "author": "F. Scott Fitzgerald",
      "publicationYear": 1925,
      "isbn": "9780743273565"
-   } ```
+   }
+   ```
 
 
     
@@ -81,7 +82,8 @@ create a new record in the users table so that you can use the project and acces
      "name": "test",
      "phone": "0106456986",
      "email": "test@test.com"
-   }...
+   }
+    ```
 
  
 
